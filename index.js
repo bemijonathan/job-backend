@@ -11,6 +11,12 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 
 
 mongoose.connect( 'mongodb+srv://jona:jona@cluster0-pps4s.mongodb.net/test?retryWrites=true&w=majority',  {dbName: 'yourDbName'});
