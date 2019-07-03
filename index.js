@@ -12,7 +12,8 @@ app.use(bodyParser.json());
 
 
 
-mongoose.connect( process.env.MONGODB_URI ||'mongodb://localhost:27017/table', {useNewUrlParser: true});
+
+mongoose.connect( 'mongodb+srv://jona:jona@cluster0-pps4s.mongodb.net/test?retryWrites=true&w=majority',  {dbName: 'yourDbName'});
 const Table = require('./db')
 
 
